@@ -31,57 +31,63 @@ import CustomersPage from '../pages/AdminPage/CustomersPage/CustomersPage.jsx';
 import ReportsPage from '../pages/AdminPage/ReportsPage/ReportsPage.jsx';
 import { ProtectedRoute } from '../components/common/ProtectedRoute/ProtectedRoute.jsx';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { index: true, element: <HomePage /> },
+        { path: 'products', element: <ProductListPage /> },
+        { path: 'products/:slug', element: <ProductDetailPage /> },
+        { path: 'login', element: <LoginPage /> },
+        { path: 'about', element: <AboutPage /> },
+        { path: 'cart', element: <CartPage /> },
+        { path: 'checkout', element: <CheckoutPage /> },
+        { path: 'order-success', element: <OrderSuccessPage /> },
+        { path: 'orders', element: <MyOrdersPage /> },
+        { path: 'orders/:id', element: <OrderDetailPage /> },
+
+        // Trang hỗ trợ và pháp lý
+        { path: 'support', element: <SupportPage /> },
+        { path: 'legal', element: <LegalPage /> },
+        { path: 'warranty', element: <WarrantyPage /> },
+
+        // Trung tâm trợ giúp
+        { path: 'help-center', element: <HelpCenterPage /> },
+        { path: 'help-center/:topicId', element: <HelpTopicPage /> },
+
+        // Dịch vụ
+        { path: 'services', element: <ServicePage /> },
+        { path: 'services/success', element: <ServiceSuccessPage /> },
+
+        // Trang người dùng
+        { path: 'saved-products', element: <SavedProductsPage /> },
+        { path: 'vouchers', element: <VoucherPage /> },
+        { path: 'settings', element: <AccountSettingsPage /> },
+      ],
+    },
+    {
+      // Trang admin nằm riêng ngoài App shell, không có Header/Footer
+      // Bọc trong ProtectedRoute để chỉ admin mới vào được
+      path: '/admin',
+      element: (
+        <ProtectedRoute>
+          <AdminLayout />
+        </ProtectedRoute>
+      ),
+      children: [
+        { index: true, element: <Navigate to="/admin/orders" replace /> },
+        { path: 'orders', element: <OrdersPage /> },
+        { path: 'products', element: <ProductsPage /> },
+        { path: 'products/new', element: <ProductFormPage /> },
+        { path: 'products/edit/:id', element: <ProductFormPage /> },
+        { path: 'customers', element: <CustomersPage /> },
+        { path: 'reports', element: <ReportsPage /> },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <App />,
-    children: [
-      { index: true,             element: <HomePage /> },
-      { path: 'products',        element: <ProductListPage /> },
-      { path: 'products/:slug',  element: <ProductDetailPage /> },
-      { path: 'login',           element: <LoginPage /> },
-      { path: 'about',           element: <AboutPage /> },
-      { path: 'cart',            element: <CartPage /> },
-      { path: 'checkout',        element: <CheckoutPage /> },
-      { path: 'order-success',   element: <OrderSuccessPage /> },
-      { path: 'orders',          element: <MyOrdersPage /> },
-      { path: 'orders/:id',      element: <OrderDetailPage /> },
-      // Khai báo các đường dẫn mới cho Trang hỗ trợ và Trang pháp lý
-      { path: 'support',         element: <SupportPage />,},
-      { path: 'legal',           element: <LegalPage />,},
-      { path: 'warranty', element: <WarrantyPage /> }, // <-- Dòng mới thêm
-      {
-        path: "/help-center",
-        element: <HelpCenterPage />,
-      },
-      {
-        path: "/help-center/:topicId",
-        element: <HelpTopicPage />,
-      },
-      { path: 'services',        element: <ServicePage /> },
-      { path: 'services/success',element: <ServiceSuccessPage /> },
-      { path: 'saved-products',  element: <SavedProductsPage /> },
-      { path: 'vouchers', element: <VoucherPage /> },
-      { path: '/settings', element: <AccountSettingsPage /> }
-    ],
-  },
-  {
-    // Trang admin nằm riêng ngoài App shell (không có Header/Footer)
-    // Bọc trong ProtectedRoute để chỉ admin mới vào được
-    path: '/admin',
-    element: (
-      <ProtectedRoute>
-        <AdminLayout />
-      </ProtectedRoute>
-    ),
-    children: [
-      { index: true,                   element: <Navigate to="/admin/orders" replace /> },
-      { path: 'orders',                element: <OrdersPage /> },
-      { path: 'products',              element: <ProductsPage /> },
-      { path: 'products/new',          element: <ProductFormPage /> },
-      { path: 'products/edit/:id',     element: <ProductFormPage /> },
-      { path: 'customers',             element: <CustomersPage /> },
-      { path: 'reports',               element: <ReportsPage /> },
-    ],
-  },
-]);
+    basename: '/PETCARE-MH-5',
+  }
+);
