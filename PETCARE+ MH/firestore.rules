@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: kiem tra user da dang nhap
+    function isAuth() {
+      return request.auth != null;
+    }
+
+    // Helper: kiem tra role = 0 (admin) tu Firestore
+    function isAdmin() {
+      return isAuth()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 0;
+    }
+
+    // Users: tu doc cua minh thi doc duoc, admin doc tat ca
+    match /users/{userId} {
+      allow read: if isAuth() && (request.auth.uid == userId || isAdmin());
+      allow create: if isAuth() && request.auth.uid == userId;
+      allow update: if isAuth() && (request.auth.uid == userId || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // Orders: user tao don cua minh, admin quan ly tat ca
+    match /orders/{orderId} {
+      allow read:   if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuth();
+      // Admin update bat ky truong nao
+      // User chi duoc huy don cua minh khi trang thai con cho xu ly / da xac nhan
+      allow update: if isAdmin()
+                    || (isAuth()
+                        && resource.data.userId == request.auth.uid
+                        && request.resource.data.status == 'cancelled'
+                        && resource.data.status in ['pending', 'confirmed']);
+      allow delete: if isAdmin();
+    }
+
+    // Products: ai cung doc duoc, chi admin moi ghi duoc
+    match /products/{productId} {
+      allow read:   if true;
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+  }
+}

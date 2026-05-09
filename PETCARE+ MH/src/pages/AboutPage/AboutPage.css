@@ -1,0 +1,160 @@
+/* ========================================================
+   GLOBAL LAYOUT TRANG ABOUT
+   ======================================================== */
+.about-page {
+  margin-top: 0; 
+}
+
+.about-section {
+  padding: 80px 0; 
+}
+
+/* Khối đầu tiên chỉ cần cách một khoảng vừa đủ đẹp */
+.about-page .about-section:first-child {
+  padding-top: 60px; 
+}
+
+.bg-white {
+  background-color: var(--color-white, #ffffff);
+}
+
+.bg-yellow {
+  background-color: #fef1b6; 
+}
+
+/* ========================================================
+   CẤU TRÚC ZIG-ZAG (Hàng ngang chứa Chữ & Ảnh)
+   ======================================================== */
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Khoảng cách siêu rộng giữa cột chữ và cột ảnh */
+}
+
+/* Đảo ngược thành (Ảnh trái - Chữ phải) cho khối Tầm nhìn */
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px; /* Bo góc ảnh mượt mà */
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  /* Fix tỷ lệ ảnh để các ảnh đều nhau (có thể tự động cắt nếu không đúng tỷ lệ) */
+  aspect-ratio: 16 / 10; 
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================================================
+   TYPOGRAPHY (ĐỊNH DẠNG CHỮ)
+   ======================================================== */
+.about-content h2 {
+  font-size: 44px; /* Kích thước to, rõ ràng */
+  font-weight: 950; /* Đậm nhất có thể giống font thiết kế */
+  color: #111111;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.text-highlight {
+  color: var(--color-yellow-500, #ffc400);
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.85; /* Dãn dòng rộng để dễ đọc */
+  color: #4a4f56;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================================
+   PHẦN CTA CUỐI TRANG
+   ======================================================== */
+.about-cta {
+  min-height: max(450px, 10vw); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/images/figma/home-cover.svg") center / cover no-repeat;
+  text-align: center;
+}
+
+.cta-content {
+  width: min(800px, 90%);
+}
+
+.cta-content h2 {
+  margin: 0 auto 36px;
+  color: #111111;
+  font-size: clamp(36px, 4vw, 56px); 
+  font-weight: 950;
+  line-height: 1.15;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px; 
+  padding: 0 44px; 
+  border-radius: 999px;
+  background: var(--color-white, #ffffff);
+  color: #111111;
+  font-size: 18px;
+  font-weight: 850;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================================
+   RESPONSIVE (ĐIỆN THOẠI & TABLET)
+   ======================================================== */
+@media (max-width: 992px) {
+  /* Chuyển layout từ ngang sang dọc */
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column; 
+    gap: 40px;
+  }
+
+  .about-section {
+    padding: 60px 0; /* Thu nhỏ khoảng cách trên mobile */
+  }
+
+  .about-content h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-cta {
+    min-height: 400px;
+  }
+  
+  .cta-btn {
+    height: 52px;
+    padding: 0 32px;
+    font-size: 16px;
+  }
+}

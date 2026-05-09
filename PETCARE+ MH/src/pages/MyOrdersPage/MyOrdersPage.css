@@ -1,0 +1,432 @@
+/* =============================================
+   MY ORDERS PAGE
+   Trang lịch sử mua hàng của người dùng
+   ============================================= */
+
+.mop-page {
+  min-height: 100vh;
+  background: #f5f5f7;
+  padding: 32px 0 60px;
+}
+
+.mop-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.mop-header {
+  margin-bottom: 24px;
+}
+
+.mop-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.mop-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Toolbar */
+.mop-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mop-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mop-tab {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #e8e8e8;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.mop-tab:hover {
+  background: #d8d8d8;
+}
+
+.mop-tab.active {
+  background: #ffc400;
+  color: #1a1a1a;
+}
+
+/* Filters */
+.mop-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mop-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mop-search-icon {
+  position: absolute;
+  left: 11px;
+  color: #999;
+  pointer-events: none;
+}
+
+.mop-search {
+  padding: 8px 12px 8px 34px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
+  width: 220px;
+  background: #fff;
+  transition: border-color 0.18s;
+}
+
+.mop-search:focus {
+  border-color: #ffc400;
+}
+
+.mop-date-wrap {
+  position: relative;
+}
+
+.mop-date-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.18s;
+}
+
+.mop-date-btn:hover {
+  border-color: #ffc400;
+}
+
+.mop-date-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  z-index: 10;
+  overflow: hidden;
+  min-width: 140px;
+}
+
+.mop-date-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mop-date-item:hover {
+  background: #f5f5f7;
+}
+
+.mop-date-item.active {
+  color: #e67e00;
+  font-weight: 700;
+}
+
+/* Order list */
+.mop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mop-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.mop-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.mop-card-id {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mop-order-id {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.mop-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.badge-processing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge-shipping {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.badge-delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.mop-card-total {
+  text-align: right;
+}
+
+.mop-total-label {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.mop-total-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e67e00;
+}
+
+.mop-card-date {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 14px;
+}
+
+/* Item row */
+.mop-item-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mop-item-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+
+.mop-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mop-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mop-item-qty {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 3px;
+}
+
+.mop-item-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffc400;
+  margin: 0;
+}
+
+.mop-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.mop-action-btn {
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.mop-rebuy {
+  color: #e67e00;
+}
+
+.mop-rebuy:hover {
+  text-decoration: underline;
+}
+
+.mop-track {
+  color: #0066cc;
+}
+
+.mop-track:hover {
+  text-decoration: underline;
+}
+
+.mop-detail {
+  color: #555;
+}
+
+.mop-detail:hover {
+  text-decoration: underline;
+  color: #1a1a1a;
+}
+
+/* Empty state */
+.mop-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+}
+
+.mop-empty-icon {
+  color: #ddd;
+  margin-bottom: 14px;
+}
+
+.mop-empty p {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.mop-empty-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #ffc400;
+  color: #1a1a1a;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mop-empty-btn:hover {
+  background: #e6b000;
+}
+
+/* Pagination */
+.mop-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 28px;
+}
+
+.mop-page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e0e0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.mop-page-btn:hover:not(:disabled) {
+  border-color: #ffc400;
+  color: #1a1a1a;
+}
+
+.mop-page-btn.active {
+  background: #ffc400;
+  border-color: #ffc400;
+  color: #1a1a1a;
+}
+
+.mop-page-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Loading */
+.mop-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: 14px;
+  color: #888;
+}
+
+.mop-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #ffc400;
+  border-radius: 50%;
+  animation: mop-spin 0.8s linear infinite;
+}
+
+@keyframes mop-spin {
+  to { transform: rotate(360deg); }
+}

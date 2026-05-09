@@ -1,0 +1,64 @@
+.service-success-wrapper {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
+  /* Nền giống hệt trang Đăng ký để tạo sự liền mạch */
+  background-color: #fffcf2; 
+  background-image: 
+    radial-gradient(circle at -5% 75%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 350px, transparent 352px),
+    radial-gradient(circle at 105% 35%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 450px, transparent 452px);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.success-card {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 24px;
+  border: 1px solid #ffea8a;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(255, 204, 0, 0.05);
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.success-card h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.success-card p {
+  color: #555;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.success-card strong {
+  color: #ffc400;
+}
+
+.btn-back-home {
+  background-color: #ffc400;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(255, 196, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-back-home:hover {
+  transform: translateY(-2px);
+}

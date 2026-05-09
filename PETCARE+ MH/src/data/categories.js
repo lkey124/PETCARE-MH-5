@@ -1,0 +1,58 @@
+export const categories = [
+  {
+    id: 'feeder',
+    name: 'Máy cho ăn',
+    icon: '🍽️',
+    image: '/images/categories/feeder.png',
+    children: ['Tự động', 'Thông minh', 'Mini', 'Camera AI', 'Hẹn giờ', 'Hai ngăn'],
+  },
+  {
+    id: 'fountain',
+    name: 'Máy lọc nước',
+    icon: '💧',
+    image: '/images/categories/fountain.png',
+    children: ['Cơ bản', 'AI', 'Không dây', 'Siêu êm', 'Thay lõi lọc', 'Dung tích lớn'],
+  },
+  {
+    id: 'litterbox',
+    name: 'Máy vệ sinh',
+    icon: '🧼',
+    image: '/images/categories/litterbox.png',
+    children: ['Tự động', 'Bán tự động', 'Khử mùi', 'Camera AI', 'Túi rác', 'Thảm lót'],
+  },
+  {
+    id: 'litter',
+    name: 'Cát mèo',
+    icon: '🐾',
+    image: '/images/categories/litter.png',
+    children: ['Cát đậu nành', 'Cát đất sét', 'Cát hỗn hợp', 'Khử mùi', 'Ít bụi', 'Vón nhanh'],
+  },
+  {
+    id: 'grooming',
+    name: 'Chăm sóc lông',
+    icon: '✂️',
+    image: '/images/categories/grooming.png',
+    children: ['Tông đơ', 'Lược chải', 'Máy hút lông', 'Cắt móng', 'Sấy lông', 'Vệ sinh tai'],
+  },
+  {
+    id: 'accessory',
+    name: 'Phụ kiện',
+    icon: '🎒',
+    image: '/images/categories/accessory.png',
+    children: ['Balo', 'Khay ăn', 'Đệm ngủ', 'Bậc thang', 'Khử mùi', 'Đồ thay thế'],
+  },
+  {
+    id: 'delivery',
+    name: 'Giao hàng',
+    icon: '🚚',
+    image: '/images/categories/delivery.png',
+    children: ['Giao nhanh', 'Theo dõi đơn', 'Phí vận chuyển'],
+  },
+  {
+    id: 'all',
+    name: 'Tất cả danh mục',
+    icon: '▦',
+    image: '/images/categories/all.png',
+    children: ['Sản phẩm mới', 'Bán chạy', 'Yêu thích', 'Ưu đãi'],
+  },
+];

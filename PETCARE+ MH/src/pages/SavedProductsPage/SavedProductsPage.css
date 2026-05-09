@@ -1,0 +1,411 @@
+/* Nền giống trang Dịch vụ */
+.saved-page-wrapper {
+  background-color: #fffcf2;
+  background-image: 
+    radial-gradient(circle at -5% 75%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 350px, transparent 352px),
+    radial-gradient(circle at 105% 35%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 450px, transparent 452px);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 40px 20px 100px;
+}
+
+.saved-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.saved-header {
+  margin-bottom: 24px;
+}
+
+.saved-header h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 8px;
+}
+
+.saved-header p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Thanh tìm kiếm dài */
+.saved-search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 16px;
+  height: 48px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+}
+
+.saved-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Lưới 4 sản phẩm */
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Giao diện Card */
+.saved-product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  
+  /* === THÊM DÒNG NÀY ĐỂ HIỆU ỨNG MƯỢT MÀ === */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* === THÊM TOÀN BỘ KHỐI NÀY ĐỂ TẠO HIỆU ỨNG RÊ CHUỘT === */
+.saved-product-card:hover {
+  transform: translateY(-5px); /* Đẩy thẻ sản phẩm lên trên 5 pixel */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1); /* Làm bóng đổ to và đậm hơn một chút */
+}
+/* ======================================================= */
+
+.card-image-wrap {
+  background: #f8f9fa;
+  border-radius: 12px;
+  height: 220px; /* Tăng nhẹ chiều cao cho giống tỉ lệ Figma */
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Thuộc tính này giúp ảnh tự động phóng to lấp đầy toàn bộ khung */
+  object-position: center; /* Canh giữa ảnh */
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 10px;
+}
+.badge-yellow { background: #ffc400; color: #fff; }
+.badge-red { background: #ff4d4f; color: #fff; }
+
+.rating { display: flex; align-items: center; gap: 4px; color: #666; }
+.rating strong { color: #333; }
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.card-title-row h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.bookmark-icon {
+  width: 32px;
+  height: auto; /* Giữ nguyên tỉ lệ ảnh */
+  cursor: pointer; /* Hiện bàn tay khi rê vào */
+  flex-shrink: 0; /* Đảm bảo hình không bị bóp méo khi tiêu đề quá dài */
+  transition: transform 0.2s; /* Thêm hiệu ứng nhẹ khi hover */
+}
+
+/* Thêm hiệu ứng phóng to nhẹ khi rê chuột vào cho nút thêm sinh động */
+.bookmark-icon:hover {
+  transform: scale(1.1);
+}
+
+.card-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.card-category {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+
+.card-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 900;
+  color: #111;
+}
+
+.btn-add-cart {
+  background: #ffea8a;
+  color: #d4a000;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-cart:hover {
+  background: #ffc400;
+  color: #fff;
+}
+
+@media (max-width: 1024px) { .saved-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .saved-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .saved-grid { grid-template-columns: 1fr; } }
+
+/* Nền giống trang Dịch vụ */
+.saved-page-wrapper {
+  background-color: #fffcf2;
+  background-image: 
+    radial-gradient(circle at -5% 75%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 350px, transparent 352px),
+    radial-gradient(circle at 105% 35%, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.12) 450px, transparent 452px);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 40px 20px 100px;
+}
+
+.saved-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.saved-header {
+  margin-bottom: 24px;
+}
+
+.saved-header h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 8px;
+}
+
+.saved-header p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Thanh tìm kiếm dài */
+.saved-search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 16px;
+  height: 48px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+}
+
+.saved-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Lưới 4 sản phẩm */
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Giao diện Card */
+.saved-product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-wrap {
+  background: #f8f9fa;
+  border-radius: 12px;
+  height: 220px; /* Tăng nhẹ chiều cao cho giống tỉ lệ Figma */
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Thuộc tính này giúp ảnh tự động phóng to lấp đầy toàn bộ khung */
+  object-position: center; /* Canh giữa ảnh */
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 10px;
+}
+.badge-yellow { background: #ffc400; color: #fff; }
+.badge-red { background: #ff4d4f; color: #fff; }
+
+.rating { display: flex; align-items: center; gap: 4px; color: #666; }
+.rating strong { color: #333; }
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.card-title-row h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.bookmark-icon {
+  width: 32px;
+  height: auto; /* Giữ nguyên tỉ lệ ảnh */
+  cursor: pointer; /* Hiện bàn tay khi rê vào */
+  flex-shrink: 0; /* Đảm bảo hình không bị bóp méo khi tiêu đề quá dài */
+  transition: transform 0.2s; /* Thêm hiệu ứng nhẹ khi hover */
+}
+
+/* Thêm hiệu ứng phóng to nhẹ khi rê chuột vào cho nút thêm sinh động */
+.bookmark-icon:hover {
+  transform: scale(1.1);
+}
+
+.card-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.card-category {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+
+.card-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 900;
+  color: #111;
+}
+
+.btn-add-cart {
+  background: #ffea8a;
+  color: #d4a000;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-cart:hover {
+  background: #ffc400;
+  color: #fff;
+}
+
+@media (max-width: 1024px) { .saved-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .saved-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .saved-grid { grid-template-columns: 1fr; } }
+
+.saved-bookmark-icon {
+  width: 32px; 
+  height: auto; /* Giữ nguyên tỷ lệ ảnh */
+  cursor: pointer; /* Hiện bàn tay khi rê chuột vào */
+  flex-shrink: 0; /* Đảm bảo hình không bị bóp méo khi tiêu đề quá dài */
+  transition: transform 0.2s; /* Thêm hiệu ứng nhẹ khi hover */
+}
+
+/* Thêm hiệu ứng phóng to nhẹ khi rê chuột vào cho nút thêm sinh động */
+.saved-bookmark-icon:hover {
+  transform: scale(1.1); /* Phóng to 1.1 lần khi hover */
+}
+/* ================================== */

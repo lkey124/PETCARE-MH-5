@@ -1,0 +1,22 @@
+# Thư mục dependencies - không bao giờ commit lên git
+node_modules/
+
+# File build output
+dist/
+dist-ssr/
+
+# File biến môi trường - chứa secret key, KHÔNG commit
+.env
+.env.local
+.env.production
+
+# Cache của Vite
+.vite/
+
+# Log files
+*.log
+npm-debug.log*
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db

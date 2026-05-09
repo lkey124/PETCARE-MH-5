@@ -1,0 +1,44 @@
+.static-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    font-family: sans-serif;
+    min-height: 60vh;
+  }
+  
+  .breadcrumb {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .breadcrumb span {
+    margin-left: 10px;
+  }
+  
+  .static-content {
+    background: transparent;
+    color: #333;
+  }
+  
+  .static-content h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .static-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #444;
+  }

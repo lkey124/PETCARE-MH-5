@@ -1,0 +1,288 @@
+/* =========================================
+   GLASSMORPHISM HEADER (TRONG VEO & DÍNH SÁT TRẦN)
+   ========================================= */
+
+/* 1. TRẠNG THÁI MẶC ĐỊNH Ở ĐỈNH TRANG */
+.site-header.glass-mode {
+  position: fixed;
+  top: 20px; /* Cách mép trên 20px khi chưa cuộn */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96%;
+  max-width: 1400px;
+  z-index: 1000;
+  
+  /* CẬP NHẬT: Kính siêu trong (chỉ 25% màu trắng) */
+  background: rgba(255, 255, 255, 0.25); 
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4); 
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), inset 0 0 0 1px rgba(255, 255, 255, 0.2); 
+  
+  padding: 8px 24px;
+  transition: all 0.3s ease; 
+}
+
+/* 2. TRẠNG THÁI KHI CUỘN CHUỘT XUỐNG */
+.site-header.glass-mode.is-scrolled {
+  top: 0; /* CẬP NHẬT: Dính sát hoàn toàn lên khung trên, xóa khoảng cách */
+  
+  /* CẬP NHẬT: Giữ nguyên độ trong suốt, không làm đục đi */
+  background: rgba(255, 255, 255, 0.25); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.3); 
+  
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 52px;
+}
+
+/* ================= LEFT AREA ================= */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+.header-logo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.checkout-title-glass {
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  padding-left: 16px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+.checkout-title-glass span {
+  font-size: 20px;
+  font-weight: 800;
+  color: #333;
+}
+
+/* ================= NAV LINKS ================= */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-nav a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.header-nav a:hover, .header-nav a.active {
+  color: #000;
+}
+
+/* ================= SEARCH BAR GLASS ================= */
+.header-search-glass {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 550px;
+  height: 44px;
+  /* CẬP NHẬT: Giảm độ đục của thanh search bên trong để Header nhìn trong veo hơn */
+  background: rgba(255, 255, 255, 0.45); 
+  border-radius: 999px;
+  padding: 4px 6px;
+}
+
+/* ... (Bạn cứ giữ nguyên các phần CSS còn lại của bạn từ đoạn .search-category-glass trở xuống nhé) ... */
+
+.search-category-glass select {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  outline: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.divider-glass {
+  width: 1px;
+  height: 20px;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+.search-input-glass {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+.search-input-glass input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-location-glass {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 14px;
+  background: rgba(255, 196, 0, 0.15);
+  border-radius: 999px;
+  height: 36px;
+}
+.search-location-glass select {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  outline: none;
+  color: #333;
+}
+
+/* ================= ACTIONS ================= */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.icon-button:hover {
+  transform: scale(1.05);
+}
+.icon-button--dark {
+  background: #111;
+  color: white;
+}
+.icon-button img {
+  width: 20px;
+}
+
+/* Badge (số lượng) */
+.has-badge {
+  position: relative;
+}
+.has-badge span {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #2617ff;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 2px 6px;
+  border: 2px solid #fff;
+}
+
+/* ... Giữ nguyên phần CSS cho .popup-overlay và các popup ở phía dưới ... */
+
+/* =========================================
+   STYLES CHO HEADER POPUPS (GIỮ NGUYÊN TỪ BẠN)
+   ========================================= */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 90;
+  cursor: default;
+}
+.popup-wrapper {
+  position: relative;
+  z-index: 100;
+}
+.header-popup {
+  position: absolute;
+  top: calc(100% + 15px);
+  right: -20px;
+  background-color: #fffceb; 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 20px;
+  cursor: default;
+  text-align: left;
+  border: 1px solid rgba(255, 204, 0, 0.2);
+}
+.header-popup h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+/* --- LỊCH --- */
+.popup-calendar { width: 320px; }
+.calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; color: #555; }
+.calendar-nav button { background: #f0f0f0; border: none; border-radius: 50%; width: 24px; height: 24px; margin-left: 5px; cursor: pointer; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; font-size: 14px; font-weight: 500; color: #666; }
+.day-name { color: #999; margin-bottom: 10px; }
+.day { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: auto; }
+.day.disabled { color: #ccc; }
+.day.highlight { background-color: #ffeca8; }
+.day.active { background-color: #ffcc00; color: #333; font-weight: bold; }
+.day.active-blue { border: 2px solid #5a67d8; color: #5a67d8; font-weight: bold; }
+.popup-divider { border: none; border-top: 1px solid #e0e0e0; margin: 20px 0; }
+.task-section h4 { font-size: 14px; color: #7a829a; margin: 15px 0 10px; }
+.task-item { display: flex; align-items: flex-start; font-size: 13px; color: #888; margin-bottom: 8px; cursor: pointer; }
+.task-item input { margin-right: 8px; margin-top: 2px;}
+.popup-actions { display: flex; gap: 10px; margin-top: 20px; }
+.btn-outline { flex: 1; padding: 10px; border: 1px solid #ccc; background: transparent; border-radius: 8px; font-weight: bold; color: #555; cursor: pointer; }
+.btn-yellow { flex: 1; padding: 10px; border: none; background: #ffcc00; border-radius: 8px; font-weight: bold; color: #333; cursor: pointer; }
+.btn-yellow.full-width { width: 100%; margin-top: 15px; border-radius: 12px; font-size: 16px;}
+
+/* --- THÔNG BÁO --- */
+.popup-notification { width: 380px; }
+.noti-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+.noti-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
+.noti-title { font-weight: bold; color: #3b00e3; display: flex; align-items: center; gap: 5px; }
+.noti-time { font-size: 12px; color: #666; display: flex; align-items: center; gap: 5px; }
+.red-dot { width: 8px; height: 8px; background: red; border-radius: 50%; display: inline-block; }
+.noti-desc { font-size: 14px; color: #555; line-height: 1.5; margin: 0; }
+
+/* --- GIỎ HÀNG --- */
+.popup-cart { width: 360px; }
+.popup-cart-items { max-height: 300px; overflow-y: auto; padding-right: 5px; }
+.popup-cart-items::-webkit-scrollbar { width: 4px; }
+.popup-cart-items::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+.mini-cart-item { display: flex; background: white; padding: 10px; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+.mini-cart-item img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; margin-right: 15px; }
+.mini-cart-details h4 { font-size: 13px; margin: 0 0 5px 0; line-height: 1.3; }
+.mini-cart-details .price { color: #3b00e3; font-weight: bold; font-size: 14px; margin: 0 0 8px 0; }
+.mini-qty-controls { display: inline-flex; align-items: center; border: 1px solid #eee; border-radius: 4px; }
+.mini-qty-controls button { background: transparent; border: none; color: #ffcc00; font-size: 16px; font-weight: bold; padding: 2px 8px; cursor: pointer; }
+.mini-qty-controls span { font-size: 13px; font-weight: bold; padding: 0 5px; }
+.mini-cart-summary { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); }
+.summary-line { display: flex; justify-content: space-between; font-size: 14px; color: #666; font-weight: bold; margin-bottom: 5px; }
+.strikethrough { text-decoration: line-through; color: #aaa; }
+.summary-line.total { font-size: 16px; color: #333; margin-top: 10px; align-items: center; }
+.final-price { color: #3b00e3; font-size: 20px; }
+.empty-cart { text-align: center; color: #888; padding: 20px 0; }

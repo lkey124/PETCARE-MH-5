@@ -1,0 +1,81 @@
+.help-topic-wrapper {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  width: 100%;
+  min-height: calc(100vh - 400px); /* Đảm bảo trang dài xuống tận footer */
+  padding: 40px 20px 80px;
+}
+
+.help-topic-container {
+  max-width: 900px; /* Nội dung text căn giữa, không bị dàn quá to */
+  margin: 0 auto;
+}
+
+/* ================= NAV ĐIỀU HƯỚNG ================= */
+.topic-back-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.topic-back-nav:hover {
+  color: #FFD633;
+}
+
+.nav-separator {
+  color: #888;
+  margin: 0 4px;
+}
+
+.topic-nav-title {
+  font-size: 17px;
+}
+
+/* ================= NỘI DUNG VĂN BẢN ================= */
+.topic-content-body {
+  color: #222;
+  line-height: 1.8;
+}
+
+.topic-content-body h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.topic-content-body h3:first-child {
+  margin-top: 0;
+}
+
+.topic-content-body p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.topic-content-body ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.topic-content-body li {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 12px;
+  position: relative;
+  list-style-type: disc;
+}
+
+.topic-content-body li::marker {
+  color: #555;
+}

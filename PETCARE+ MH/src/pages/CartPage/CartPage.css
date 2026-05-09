@@ -1,0 +1,164 @@
+.cart-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Màu nền xám nhạt như thiết kế */
+  font-family: sans-serif;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Cột danh sách sản phẩm */
+.cart-items {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.item-price {
+  color: #0056b3; /* Màu xanh đậm của giá tiền */
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.qty-btn {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  color: #ffc107; /* Nút cộng trừ màu vàng */
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.qty-number {
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+/* Cột tổng đơn hàng */
+.cart-summary {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cart-summary h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.free-shipping {
+  color: #ffc107;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.total-row {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.total-price {
+  color: #0056b3;
+}
+
+.checkout-button {
+  width: 100%;
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: #e6b800;
+}
+
+.checkout-note {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.checkout-note a {
+  color: #ffcc00;
+  text-decoration: none;
+}

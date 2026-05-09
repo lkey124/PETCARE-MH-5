@@ -1,0 +1,213 @@
+/* ========================================================
+   BỐ CỤC TỔNG THỂ TRANG ĐĂNG NHẬP
+   ======================================================== */
+.auth-page {
+  /* Chiều cao toàn màn hình trừ đi Header 88px */
+  min-height: calc(100vh - 88px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Nền trắng trơn theo thiết kế */
+  padding: 40px 20px;
+}
+
+/* Khung chứa các form */
+.auth-card {
+  width: 100%;
+  max-width: 440px; /* Giới hạn độ rộng để form không bị bè ra */
+  background: #ffffff;
+}
+
+/* Hiệu ứng mờ dần khi chuyển đổi giữa các màn hình */
+.animate-fade {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================
+   TYPOGRAPHY (CHỮ)
+   ======================================================== */
+.auth-title {
+  font-size: 26px;
+  font-weight: 850;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #777777;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+/* ========================================================
+   NÚT MẠNG XÃ HỘI
+   ======================================================== */
+.social-login-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.social-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px; /* Bo tròn hoàn toàn hai đầu */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.social-btn:hover {
+  background: #f9f9f9;
+}
+
+.social-icon {
+  position: absolute;
+  left: 20px; /* Ghim icon sang mép trái */
+  display: flex;
+}
+
+.social-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+}
+
+/* ========================================================
+   ĐƯỜNG KẺ "HOẶC"
+   ======================================================== */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 32px 0;
+  color: #888888;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.auth-divider span {
+  padding: 0 16px;
+}
+
+/* ========================================================
+   INPUT VÀ NÚT CHÍNH (VÀNG)
+   ======================================================== */
+.auth-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  border: 1px solid #cccccc;
+  border-radius: 12px; /* Góc bo nhẹ cho input */
+  margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+  color: #999999;
+  font-weight: 500;
+}
+
+.auth-input:focus {
+  border-color: #ffc400;
+}
+
+/* Wrapper bọc input mật khẩu + nút con mắt */
+.password-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.password-wrapper .auth-input {
+  margin-bottom: 0;
+  padding-right: 48px; /* chừa chỗ cho icon */
+}
+
+.eye-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.eye-btn:hover { color: #333; }
+
+.auth-btn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.auth-btn.btn-primary {
+  background-color: var(--color-yellow-500, #ffc400);
+  color: #000000;
+}
+
+.auth-btn.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+/* ========================================================
+   CÁC ĐƯỜNG DẪN DƯỚI DẠNG TEXT
+   ======================================================== */
+.auth-link-container {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: #777777;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.text-link:hover {
+  color: #111111;
+}
+
+.center-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

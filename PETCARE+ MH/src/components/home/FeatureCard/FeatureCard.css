@@ -1,0 +1,73 @@
+.feature-card {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 245, 160, 0.3) 0 170px, transparent 172px),
+    linear-gradient(135deg, #ffe778 0%, #ffd225 100%);
+  box-shadow: 0 16px 26px rgba(255, 196, 0, 0.18);
+}
+
+/* Đã thêm dấu > để chỉ áp dụng cho ảnh bìa lớn, bảo vệ icon chân mèo */
+.feature-card > img {
+  width: 100%;
+  aspect-ratio: 414 / 336;
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.feature-card__body {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  min-height: 63px;
+  padding: 0 46px 0 15px;
+}
+
+.feature-card h3 {
+  align-self: center;
+  margin: 0;
+  color: #333333;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 950;
+}
+
+.feature-card p {
+  display: none;
+}
+
+.feature-card button {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  display: grid;
+  place-items: center;
+  
+  /* Cố định kích thước */
+  width: 40px;
+  height: 40px;
+  
+  /* BẮT BUỘC: Xóa padding/margin mặc định để nút không bị phình to */
+  padding: 0; 
+  margin: 0; 
+  box-sizing: border-box; /* Ép trình duyệt tôn trọng đúng kích thước 40x40 */
+  
+  border: 0;
+  border-radius: 50%; /* Dùng 50% để tạo hình tròn tuyệt đối */
+  background: var(--color-white);
+  box-shadow: 0 10px 25px rgba(255, 196, 0, 0.35);
+  cursor: pointer;
+  
+  /* Hiệu ứng nảy mượt mà cho toàn bộ nút */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi rê chuột vào nút: Phóng to nảy nhẹ giống UtilityCard */
+.feature-card button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 14px 28px rgba(255, 196, 0, 0.45);
+}

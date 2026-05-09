@@ -1,0 +1,484 @@
+.home-suggest.section-block {
+  margin-top: 21px;
+  padding: 21px;
+  border-radius: 10px;
+  background: var(--color-white);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.home-suggest__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 23px;
+}
+
+.home-suggest__header h2 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 950;
+}
+
+.home-suggest__header h2 span {
+  color: #1684ff;
+  font-size: 13px;
+  line-height: 0.7;
+}
+
+.home-suggest__header > span {
+  color: #777a80;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.home-suggest__gallery {
+  display: flex;
+  gap: 21px;
+  overflow: hidden;
+}
+
+.home-suggest__gallery img {
+  flex: 0 0 260px;
+  width: 260px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f7f7f8;
+}
+
+.home-band {
+  display: grid;
+  place-items: center;
+  min-height: 77px;
+  margin-bottom: 21px;
+  border-radius: 13px;
+  background:
+    radial-gradient(circle at 0 50%, rgba(255, 255, 255, 0.22) 0 86px, transparent 88px),
+    radial-gradient(circle at 50% -140%, rgba(255, 244, 128, 0.32) 0 230px, transparent 232px),
+    radial-gradient(circle at 94% 8%, rgba(255, 255, 255, 0.16) 0 86px, transparent 88px),
+    linear-gradient(135deg, #ffdf49 0%, #ffc400 100%);
+  color: #2c2c2c;
+  font-size: 27px;
+  line-height: 1.1;
+  font-weight: 950;
+  text-align: center;
+}
+
+.home-product-grid {
+  position: relative;
+  display: flex;
+  gap: 21px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.home-product-grid::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 105px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(160, 160, 160, 0.42));
+}
+
+.home-product-grid .product-card {
+  flex: 0 0 260px;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.home-product-grid .product-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.home-product-grid .product-card__image {
+  border-radius: 9px;
+}
+
+.home-product-grid .product-card__image img {
+  width: 260px;
+  height: 260px;
+  aspect-ratio: auto;
+}
+
+.home-product-grid .product-card__meta {
+  margin-top: 21px;
+}
+
+.home-product-grid .product-card__badge {
+  min-height: 19px;
+  padding: 0 8px;
+  font-size: 9px;
+}
+
+.home-product-grid .product-card__rating {
+  font-size: 11px;
+}
+
+.home-product-grid .product-card h3 {
+  min-height: 41px;
+  font-size: 18px;
+  line-height: 1.18;
+}
+
+.home-product-grid .product-card__subtitle {
+  min-height: 36px;
+  margin: 6px 0 15px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.home-product-grid .product-card__category {
+  min-height: 20px;
+  padding: 0 9px;
+  font-size: 10px;
+}
+
+.home-product-grid .product-card__footer strong {
+  font-size: 20px;
+}
+
+.home-product-grid .product-card__add {
+  width: 46px;
+  height: 46px;
+}
+
+.home-feature-grid,
+.home-utility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 21px;
+}
+
+.home-about.section-block {
+  margin-top: 0;
+  padding: 38px;
+  border-radius: 34px;
+  background: var(--color-white);
+}
+
+.home-about h2 {
+  margin: 0 0 26px;
+  font-size: 26px;
+  line-height: 1.18;
+  font-weight: 950;
+}
+
+.home-about p {
+  margin: 0 0 22px;
+  color: #74777d;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+.home-about p:last-child {
+  margin-bottom: 0;
+}
+
+.home-about strong {
+  color: #6e7279;
+  font-weight: 950;
+}
+
+.home-testimonials.section-block {
+  padding-top: 18px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.testimonial-card {
+  position: relative;
+  min-height: 264px;
+  padding: 33px 21px 21px;
+  border-radius: 19px;
+  background: var(--color-white);
+}
+
+.testimonial-card__quote {
+  position: absolute;
+  top: 24px;
+  left: 21px;
+  color: #d7e5ff;
+  font-size: 61px;
+  line-height: 0.8;
+  font-weight: 950;
+}
+
+.testimonial-card__stars {
+  text-align: right;
+  color: var(--color-yellow-500);
+  font-size: 21px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+.testimonial-card p {
+  min-height: 72px;
+  margin: 43px 0 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #e8ebf0;
+  color: #292b30;
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.8;
+}
+
+.testimonial-card__person {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.testimonial-card__person img {
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card strong,
+.testimonial-card small {
+  display: block;
+}
+
+.testimonial-card strong {
+  color: #25272b;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 950;
+}
+
+.testimonial-card small {
+  margin-top: 3px;
+  color: #73767d;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.home-final-cta {
+  min-height: 430px;
+  margin-top: 18px;
+  display: grid;
+  place-items: center;
+  background: url("/images/figma/home-cover.svg") center / 100% 100% no-repeat;
+  text-align: center;
+}
+
+.home-final-cta h2 {
+  width: min(663px, 100%);
+  margin: 0 auto 24px;
+  color: #16171d;
+  font-size: 55px;
+  font-weight: 950;
+  line-height: 1.05;
+}
+
+.home-final-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: var(--color-white);
+  font-size: 17px;
+  font-weight: 950;
+}
+
+@media (max-width: 1100px) {
+  .home-feature-grid,
+  .home-utility-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-suggest,
+  .home-product-grid {
+    padding: 14px;
+  }
+
+  .home-band {
+    min-height: 62px;
+    font-size: 24px;
+  }
+
+  .home-feature-grid,
+  .home-utility-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-suggest__gallery img,
+  .home-product-grid .product-card,
+  .home-product-grid .product-card__image img {
+    flex-basis: 260px;
+    width: 260px;
+    height: 260px;
+  }
+
+  .home-about {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .home-final-cta {
+    min-height: 380px;
+  }
+
+  .home-final-cta h2 {
+    font-size: 40px;
+  }
+}
+
+/* =========================================
+   FIX LỖI CẮT MÀU GIỮA SẢN PHẨM & DỊCH VỤ
+   ========================================= */
+
+.home-products.section-block {
+  margin-bottom: 0 !important; 
+  padding-bottom: 40px;        
+}
+
+.home-services.section-block {
+  margin-top: 0 !important;    
+  padding-top: 10px;           
+}
+
+/* Tinh chỉnh thêm để dải băng Dịch vụ sát lên trên nếu cần */
+.home-services .home-band {
+  margin-top: 0;
+}
+
+/* =========================================
+   NÚT LƯỚT SẢN PHẨM NỔI BẬT (CAROUSEL)
+   ========================================= */
+
+/* Khung chứa lưới sản phẩm và nút */
+.product-carousel-wrapper {
+  position: relative;
+}
+
+/* Đè lại thuộc tính của lưới gốc để nó có thể lướt ngang được */
+.home-product-grid {
+  overflow-x: auto !important; /* Cho phép lướt ngang */
+  -ms-overflow-style: none;    /* Ẩn thanh cuộn IE/Edge */
+  scrollbar-width: none;       /* Ẩn thanh cuộn Firefox */
+}
+.home-product-grid::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn Chrome/Safari/Opera */
+}
+
+/* Ẩn hiệu ứng fade cũ của lưới bị lỗi khi cuộn ngang */
+.home-product-grid::after {
+  display: none !important; 
+}
+
+/* Chuyển hiệu ứng mờ (fade) ra lớp vỏ bọc ngoài cùng */
+.product-carousel-wrapper::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,0), var(--color-white));
+  border-radius: 0 10px 10px 0;
+  z-index: 5;
+}
+
+/* STYLE CHO 2 NÚT BẤM */
+.product-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+/* STYLE CHO 2 NÚT BẤM (CẬP NHẬT) */
+.product-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  
+  /* Hiệu ứng hiện hình mượt mà */
+  animation: fadeIn 0.3s ease-in-out; 
+  transition: all 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-50%) scale(0.8); }
+  to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+.product-nav-btn:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.1);
+  border-color: #ffc400;
+}
+
+/* Đẩy nút ra nửa trong nửa ngoài mép lưới */
+.product-nav-btn.prev-btn {
+  left: -22px; 
+}
+
+.product-nav-btn.next-btn {
+  right: -22px;
+}
+/* STYLE BỔ SUNG: Cho icon chân mèo mới */
+.paw-nav-icon {
+  width: 34px;   /* Giữ kích thước tương đương icon cũ */
+  height: 34px;
+  object-fit: contain; /* Đảm bảo hình không bị méo */
+}
+/* LẬT NGƯỢC CHÂN MÈO CHO NÚT TRÁI */
+.paw-nav-icon--flip {
+  transform: scaleX(-1);
+}

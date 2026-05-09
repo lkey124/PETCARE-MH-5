@@ -1,0 +1,243 @@
+.user-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================================
+   HIỆU ỨNG NÚT BẤM KÉO DÀI (GIỮ NGUYÊN)
+   ======================================================== */
+.user-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  height: 44px;
+  width: 68px; 
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  padding: 0 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.user-expand-btn .user-icon {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.user-expand-btn .user-text {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  font-weight: 700;
+  color: #000;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-expand-btn .user-arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-expand-btn.active {
+  width: 170px; 
+  background: #ffc400;
+  box-shadow: 0 4px 12px rgba(255, 196, 0, 0.3);
+}
+
+.user-expand-btn.active .user-text {
+  max-width: 130px; 
+  opacity: 1;
+  margin: 0 8px; 
+}
+
+.user-expand-btn.active .user-arrow.rotate {
+  transform: rotate(90deg); 
+}
+
+/* ========================================================
+   BẢNG MENU DROP DOWN CHUYỂN ĐỘNG TRƯỢT 
+   ======================================================== */
+.user-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 360px; /* Tăng độ rộng lên 360px cho vừa form thiết kế */
+  background-color: #f4f5f6; /* Nền xám nhạt như bản vẽ */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  padding-top: 26px; /* 10px khoảng cách ảo + 16px padding gốc */
+  margin-top: -10px; /* Che khoảng trống với nút, giữ hover liên tục */
+  z-index: 999;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-15px); 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none; 
+}
+
+.user-dropdown-panel.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); 
+  pointer-events: auto;
+}
+
+/* ========================================================
+   GIAO DIỆN BÊN TRONG BẢNG DROPDOWN
+   ======================================================== */
+.auth-banner-card {
+  position: relative;
+  background: linear-gradient(135deg, #fff9e6 0%, #fff1b8 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.auth-banner-text h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 850;
+  color: #111;
+  line-height: 1.3;
+  width: 70%;
+}
+
+.auth-banner-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Canh chỉnh lại ảnh mèo 3D */
+.auth-cat-img {
+  position: absolute;
+  top: 0; /* Đưa về 0 để sát mép trên, không bị cắt tai */
+  right: 0; /* Sát mép phải */
+  width: 130px; /* Tăng kích thước lên một chút cho cân đối với form */
+  height: auto;
+  pointer-events: none;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.auth-actions a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-outline:hover {
+  background: #f9f9f9;
+}
+
+.btn-solid {
+  background: var(--color-yellow-500, #ffc400);
+  color: #111;
+  border: none;
+}
+
+.btn-solid:hover {
+  filter: brightness(0.95);
+}
+
+.menu-group {
+  margin-bottom: 16px;
+}
+
+.menu-group:last-child {
+  margin-bottom: 0;
+}
+
+.menu-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.menu-list {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+}
+
+.menu-item-link:last-child {
+  border-bottom: none;
+}
+
+.menu-item-link:hover {
+  background-color: #f9fafa;
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  display: flex;
+  color: #777; 
+}
+
+.menu-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #555;
+}
+
+.menu-chevron {
+  color: #bbb;
+}
+
+/* ========================================================
+   STYLE CHO ẢNH ĐẠI DIỆN GOOGLE (AVATAR)
+   ======================================================== */
+.user-expand-btn .user-icon.avatar-img {
+  width: 24px; /* Avatar sẽ lớn hơn icon mặc định 1 chút để nhìn rõ mặt */
+  height: 24px; /* Cố định chiều cao */
+  border-radius: 50%; /* Biến thành hình tròn */
+  object-fit: cover; /* Đảm bảo hình không bị méo */
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Viền xám siêu mỏng bao quanh ảnh */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+}

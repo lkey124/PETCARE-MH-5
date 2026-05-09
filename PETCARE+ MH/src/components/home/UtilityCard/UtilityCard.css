@@ -1,0 +1,85 @@
+.utility-card {
+  display: grid;
+  gap: 19px;
+  padding: 19px;
+  border: 3px solid var(--color-yellow-500, #ffc400);
+  border-radius: 34px;
+  background: var(--color-white, #ffffff);
+  box-shadow: 0 14px 24px rgba(255, 196, 0, 0.11);
+  cursor: pointer;
+}
+
+/* Ký hiệu > giúp chỉ áp dụng cho ảnh minh họa lớn, không ảnh hưởng icon */
+.utility-card > img {
+  width: 100%;
+  aspect-ratio: 414 / 386;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #f7f7f8;
+}
+
+.utility-card__content {
+  position: relative;
+  padding: 0 15px 22px;
+}
+
+.utility-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  color: #333333;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 950;
+}
+
+.utility-card h3 svg {
+  flex: 0 0 auto;
+  color: var(--color-yellow-500, #ffc400);
+}
+
+.utility-card p {
+  max-width: 332px;
+  margin: 0;
+  color: #777a80;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.55;
+  /* Chừa sẵn một khoảng trống bên phải để chữ không đè lên nút tròn */
+  padding-right: 40px; 
+}
+
+/* --- CSS NÚT BẤM TRÒN VÀ HIỆU ỨNG NẢY --- */
+
+.utility-card__btn {
+  position: absolute;
+  bottom: 6px;
+  right: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-yellow-500, #ffc400);
+  border-radius: 50%;
+  text-decoration: none;
+  
+  /* Hiệu ứng nảy nhẹ mượt mà khi phóng to */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+/* Cố định tuyệt đối kích thước icon chân mèo */
+.utility-card__paw-icon {
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain;
+  background: transparent !important;
+  flex-shrink: 0; /* Chống méo/dẹt icon trong mọi tình huống */
+}
+
+/* Hiệu ứng khi rê chuột trực tiếp vào nút */
+.utility-card__btn:hover {
+  transform: scale(1.15); /* Phóng to 15% */
+  box-shadow: 0 8px 16px rgba(255, 196, 0, 0.4); /* Tỏa bóng màu vàng */
+}

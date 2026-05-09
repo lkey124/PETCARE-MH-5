@@ -1,0 +1,152 @@
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: sans-serif;
+}
+
+.checkout-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.checkout-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.checkout-form-section {
+  flex: 2;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.delivery-method {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.free-shipping {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.checkout-payment-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-methods {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkout-summary {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.total-price {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.confirm-button {
+  width: 100%;
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.confirm-button:hover {
+  background-color: #e6b800;
+}
+
+/* --- CSS CHO Ô NHẬP SỐ ĐIỆN THOẠI CÓ MÃ VÙNG --- */
+
+/* Biến div bao bọc thành một cái khung giống ô input */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden; /* Giữ góc bo tròn không bị tràn */
+  transition: border-color 0.2s ease; /* Hiệu ứng chuyển viền mượt mà */
+}
+
+/* Đổi viền thành màu xanh khi người dùng click vào ô input bên trong */
+.phone-input-wrapper:focus-within {
+  border-color: #0d6efd; /* Màu xanh focus */
+  box-shadow: 0 0 0 1px #0d6efd; /* Thêm độ dày nhẹ cho viền */
+}
+
+/* Style cho chữ +84 */
+.phone-prefix {
+  padding: 12px 14px;
+  background-color: #f8f9fa;
+  color: #555;
+  font-weight: 500;
+  border-right: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Ghi đè lại style của ô input thật sự bên trong để nó hòa quyện với khung */
+.phone-input-wrapper input {
+  border: none; /* Bỏ viền của input vì đã lấy viền của wrapper */
+  border-radius: 0;
+  margin-bottom: 0;
+  outline: none; /* Bỏ viền outline mặc định của trình duyệt */
+  flex: 1; /* Cho input chiếm hết không gian còn lại */
+}
